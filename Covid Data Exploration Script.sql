@@ -1,3 +1,4 @@
+
 -- Data Exploration Using SQL – Covid Data
 
 -- Let's preview our data and make sure it was imported correctly:
