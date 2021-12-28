@@ -1,8 +1,11 @@
 -- Data Exploration Using SQL – Covid Data
--- Let's preview our data and make sure it was imported correctly
+
+-- Let's preview our data and make sure it was imported correctly:
+-- CovidDeaths table
 Select *
 From PortfolioProjects..CovidDeaths;
 
+-- CovidVaccinations table
 Select *
 From PortfolioProjects..CovidVaccinations;
 
@@ -18,8 +21,7 @@ From PortfolioProjects..CovidDeaths
 Where continent is not null
 Order by 1,2;
 
--- Looking at total cases vs. total deaths for each country
--- This shows the likelihood of dying if you contract covid in each country
+-- Looking at total cases vs. total deaths, we can see the likelihood of dying if you contract covid for each country
 Select 
     location, 
     date, 
@@ -31,7 +33,7 @@ Where continent is not null
 Order by 1,2;
 
 -- Let's store the above information for later: total cases vs. total deaths for each country
-Create View CountryDeathRate as 
+CREATE VIEW CountryDeathRate as 
 Select
     location, 
     date, 
@@ -81,7 +83,7 @@ Where continent is not null
 Order by 1,2;
 
 -- Let's store the above information for later: total cases vs population for each country
-Create View CountryPopulationPercentage as
+CREATE VIEW CountryPopulationPercentage as
 Select 
     location, 
     date, 
@@ -107,7 +109,7 @@ Group by location, population
 Order by PopulationPercent desc;
 
 -- Let's store the above information for later: countries with highest infection rate compared to population 
-Create View CountryHighestInfectionRate as
+CREATE VIEW CountryHighestInfectionRate as
 Select 
     location, 
     population, 
@@ -131,7 +133,7 @@ Group by location
 Order by TotalDeathCount desc;
 
 -- Let's store the above information for later: countries with highest death count per population 
-Create View CountryHighestDeathCount as
+CREATE VIEW CountryHighestDeathCount as
 Select 
     location, 
     MAX(total_deaths) as TotalDeathCount
@@ -154,7 +156,7 @@ Group by continent
 Order by TotalDeathCount desc;
 
 -- Let's store the above information for later: continents with the highest death count 
-Create View ContinentHighestDeathCount as
+CREATE VIEW ContinentHighestDeathCount as
 Select 
     continent, 
     MAX(total_deaths) as TotalDeathCount
@@ -177,7 +179,7 @@ Where continent is not null
 Order by 1,2;
 
 -- Let's store the above information for later:
-Create View GlobalDeaths as
+CREATE VIEW GlobalDeaths as
 Select 
     SUM(new_cases) as total_cases, 
     SUM(new_deaths) as total_deaths, 
@@ -211,7 +213,7 @@ Order by 2,3;
 
 -- We can get the rolling percentage of the population that is vaccinated a few different ways:
 -- 1. Using CTE
-With PopvsVax as
+WITH PopvsVax as
 (
 Select 
     dea.continent, 
@@ -233,7 +235,7 @@ Order by 2,3;
 
 
 -- 2. Using Temp Tables
-Create Table PercentPopulationVaxxed
+CREATE TABLE PercentPopulationVaxxed
 (
     continent nvarchar(255),
     location nvarchar(255),
@@ -262,7 +264,7 @@ From PercentPopulationVaxxed
 Order by 2,3;
 
 -- 3. We can also choose to Create View, like we've already done with other data, to store it for visualizations later on 
-Create View PercentPopulationVax as
+CREATE VIEW PercentPopulationVax as
 Select 
     dea.continent, 
     dea.location, 
