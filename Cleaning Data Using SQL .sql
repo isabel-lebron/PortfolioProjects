@@ -127,13 +127,13 @@ WITH DuplicatesCTE AS(
 Select *,
 	ROW_NUMBER() OVER (
 	PARTITION BY ParcelID,
-				 PropertyAddress,
-				 SalePrice,
-				 SaleDate,
-				 LegalReference
-				 ORDER BY
-					UniqueID
-					) AS Count
+		     PropertyAddress,
+		     SalePrice,
+		     SaleDate,
+		     LegalReference
+		ORDER BY
+		     UniqueID
+		     ) AS Count
 From PortfolioProjects.dbo.NashvilleHousing
 )
 DELETE
