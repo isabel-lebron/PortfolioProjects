@@ -25,7 +25,7 @@ would equally split an additional $500. The study ran for 24 weeks and
 the total change in weight (in pounds) was recorded.  
   
 
-#### Perparing the data:
+#### Preparing the data:
 
 ``` r
 setwd("~/Desktop/Projects")
@@ -35,7 +35,7 @@ names(wtloss) <- c("Group","Change")
 wtloss$Trt <- Trt; rm(Trt)
 ```
 
-**Notes:** Above I read in the data creates the dataframe. Additionally,
+**Notes:** Above I read in the data and created the dataframe. Additionally,
 I specified the 3 different weight loss programs that are distinguished
 under “Group” in the data set. I’ll call these levels, “Ctrl”, “Indiv”
 and “Grp”. I then change the name of the response variable from “Loss”
