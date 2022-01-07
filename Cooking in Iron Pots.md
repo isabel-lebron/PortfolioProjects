@@ -79,7 +79,7 @@ plot.design(iron ~ pot*dish)
 interaction.plot(pot, dish, response = iron)
 ```
 
-<img src="Iron-Pots_files/figure-gfm/unnamed-chunk-3-1.png" width="50%" /><img src="Iron-Pots_files/figure-gfm/unnamed-chunk-3-2.png" width="50%" />
+<img src="iron_plot1.png" width="50%" /><img src="iron_plot2.png" width="50%" />
 **Notes:** Based on the interaction plot above, it can be seen that
 there is some indication of a present interaction between the pot type
 and the dish type.
