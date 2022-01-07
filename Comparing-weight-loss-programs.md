@@ -84,7 +84,7 @@ standard deviation.
 plot.design(Change ~ Trt, data=wtloss)
 plot(Change ~ Trt, data=wtloss)  
 ```
-<img src= "weightloss_files/figure-gfm/weightloss_plot1.png" width="50%" /><img src= "weightloss_files/figure-gfm/weightloss_plot2.png" 
+<img src= "weightloss_plot1.png" width="50%" /><img src= "weightloss_plot2.png" 
 **Notes:** Taking a look at the boxplots, It is very clear that for the
 “Control” weight loss program, the median weight change is very close
 to zero, seems to be around -1. Additionally, for the “Individual”
@@ -125,7 +125,7 @@ quantile-quantile plot of standardized residuals.
  plot(wtloss.aov,which=2)
 ```
 
-<img src= "weightloss_files/figure-gfm/weightloss_plot3.png" width="50%" /><img src= "weightloss_files/figure-gfm/weightloss_plot4.png"  
+<img src= "weightloss_plot3.png" width="50%" /><img src= "weightloss_plot4.png"  
 **Notes** The above plots are pretty useful for showing whether or not
 the ANOVA assumptions are satisfied. First, the assumption that variance
 is constant, can be seen to be satisfied from the plot of residuals. It
