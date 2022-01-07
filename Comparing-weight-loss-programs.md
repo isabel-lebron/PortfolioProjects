@@ -6,7 +6,7 @@ Isabel Lebron
 
 #### **Purpose:**
 
-To compare weight-loss programs using Analysis of Variance
+To compare weight-loss programs **using Analysis of Variance**
 
 #### **Background Info:**
 
